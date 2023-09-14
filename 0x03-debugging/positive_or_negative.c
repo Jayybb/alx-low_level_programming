@@ -1,15 +1,17 @@
 #include <stdio.h>
+#include "main.h"
 
 void positive_or_negative(int i)
 {
-	
-	elseif(i > 0);
-	printf("%dd is positive\n", i);
+if(i > 0)
+{
+printf("%dd is positive\n", i);
+}
 
-	elseif(i == 0);
-	printf("%dd is zero\n", i);
+if(i == 0)
+printf("%d is zero\n", i);
 
-	elseif(i < 0);
-	printf("%dd is negative\n", i);
+else
+printf("%d is negative\n",i);
 
 }
