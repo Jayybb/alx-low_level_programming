@@ -1,17 +1,25 @@
+#include <stdlib.h>
 #include <stdio.h>
-#include "main.h"
+#include <time.h>
 
-void positive_or_negative(int i)
+
+/**
+* main - Prints a random number decides whether it is positive,negative,orzero.
+*
+* Return: Always 0.
+*/
+int main(void)
 {
-if(i > 0)
-{
-printf("%dd is positive\n", i);
-}
+int n;
 
-if(i == 0)
-printf("%d is zero\n", i);
+srand(time(0));
+n = rand() - RAND_MAX / 2;
+if (n > 0)
+printf("%d is positive\n", n);
 
+else if (n < 0)
+printf("%d is negative\n", n);
 else
-printf("%d is negative\n",i);
-
+printf("%d is zero\n", n);
+return (0);
 }
