@@ -2,20 +2,19 @@
 #include "lists.h"
 
 /**
- * list_len - length of the list
- * @h: header to the first node
- * Return: Number of the nodes in the list
+ * list_len - length of he list
+ * @h: header to the list_t list
+ *
+ * Return: number of elements in h
  */
-
 size_t list_len(const list_t *h)
 {
-int i;
+ size_t i = 0;
 
-if (h == 0)
-return (0);
-
-for (i = 1; h->next != 0; i++);
-h = h->next;
-
-return (i);
+ while (h)
+ {
+ i++;
+ h = h->next;
+ }
+ return (i);
 }
