@@ -9,7 +9,9 @@
  *
  */
 int append_text_to_file(const char *filename, char *text_content)
+
 {
+
 int file_i;
 int nlett;
 int rwr;
@@ -25,6 +27,7 @@ return (-1);
 if (text_content)
 
 {
+
 for (nlett = 0; text_content[nlett]; nlett++)
 ;
 
@@ -32,7 +35,9 @@ rwr = write(file_i, text_content, nlett);
 
 if (rwr == -1)
 return (-1);
+
 }
 close(file_i);
 return (1);
+
 }
