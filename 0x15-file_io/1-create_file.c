@@ -9,26 +9,20 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-int file_i;
-int nlett;
-int rwr;
+int file_i, w, lett = 0;
 
-if (!filename)
+if (filename == NULL)
 return (-1);
 
-file_i = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+if (text_content != NULL)
+{
+for (lett = 0; text_content[lett];)
+lett++;
+}
+file_i = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+w = write(file_i, text_content, lett);
 
-if (file_i == -1)
-return (-1);
-
-if (!text_content)
-text_content = "";
-
-for (nlett = 0; text_content[nlett]; nlett++)
-
-rwr = write(file_i, text_content, nlett);
-
-if (rwr == -1)
+if (file_i == -1 || w == -1)
 return (-1);
 
 close(file_i);
