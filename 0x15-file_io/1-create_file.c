@@ -15,6 +15,7 @@ int rwr;
 
 if (!filename)
 return (-1);
+
 file_i = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 
 if (file_i == -1)
@@ -26,6 +27,7 @@ text_content = "";
 for (nlett = 0; text_content[nlett]; nlett++)
 
 rwr = write(file_i, text_content, nlett);
+
 if (rwr == -1)
 return (-1);
 
