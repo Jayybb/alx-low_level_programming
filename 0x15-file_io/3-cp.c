@@ -1,6 +1,9 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <fcntl.h>
 #include <unistd.h>
 
 void check_IO_stat(int stat, int fd, char *filename, char mode);
